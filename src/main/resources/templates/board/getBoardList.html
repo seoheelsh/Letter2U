@@ -9,8 +9,8 @@
 
 <body>
 	<section>
-		<img src="../../images/header.jpg" class="header">
-		<img src="../../images/logo.png" class="logo">
+		<img src="../../images/header.jpg" class="board-header">
+		<img src="../../images/logo.png" class="board-logo">
 		<nav class="nav">
 			<a th:href="@{/system/logout}">Logout</a>&nbsp;&nbsp;&nbsp;
 			<a th:href="@{/admin/adminPage}">My Page</a>
@@ -59,6 +59,6 @@
 		</tr>
 	</table>
 	<br>
-	<div class="insert"><a th:href="@{/board/insertBoard}">글쓰기</a></div>
+	<a th:href="@{/board/insertBoard}" class="insert">글쓰기</a>
 </body>
 </html>

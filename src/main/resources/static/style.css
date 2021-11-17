@@ -3,6 +3,32 @@
     padding: 0;
     font-family: sans-serif;
 }
+a{
+	text-decoration: none;
+}
+.nav a{
+	background: rgba(255, 255, 255, 0.4);
+    font-size: small;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    display: inline-block;
+}
+.nav a:link{
+	color: #ff8765;
+}
+.nav a:visited{
+	color: #ff8765;
+}
+.nav a:hover{
+    background: #ff8765;
+    border-color: #ff8765;
+    color: #000;
+    transition: 0.5s;
+}
+table a:link, a:visited{
+	color: #000;
+}
 .container{
     height: auto;
     max-width: 100%;
@@ -11,14 +37,14 @@
     background-position: center;
     position: relative;
 }
-.header{
+.board-header{
 	width: 100%;
 }
-.logo{
+.board-logo{
     width: 100px;
     position: absolute;
-    left: 10;
-    top: 10;
+    left: 20;
+    top: 20;
 }
 .nav{
 	position: absolute;
@@ -66,7 +92,6 @@
     font-size: 14px;
 }
 .content .btn{
-    text-decoration: none;
     border: 1px solid #fff;
     color: #fff;
     letter-spacing: 1px;
@@ -126,7 +151,6 @@ th, td{
 .insert{
 	width: 60;
 	text-align: center;
-	text-decoration: none;
     border: 1px solid #ff8765;
     color: #ff8765;
     letter-spacing: 1px;
