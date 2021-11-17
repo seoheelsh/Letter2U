@@ -11,6 +11,27 @@
     background-position: center;
     position: relative;
 }
+.header{
+	width: 100%;
+}
+.logo{
+    width: 100px;
+    position: absolute;
+    left: 10;
+    top: 10;
+}
+.nav{
+	position: absolute;
+    right: 50;
+    top: 10;
+}
+.menu{
+    width: 20px;
+    position: absolute;
+    right: 10;
+    top: 10;
+    cursor: pointer;
+}
 .content{
     width: 88%;
     margin: auto;
@@ -75,10 +96,50 @@
     z-index: 1;
     backdrop-filter: blur(6px);
 }
-.menu{
-    width: 20px;
-    position: absolute;
-    right: 10;
-    top: 10;
-    cursor: pointer;
+table{
+	min-width: 500px;
+	border-top: 1px solid;
+	border-collapse: collapse;
+	margin: auto;
+	margin-top: 40;
+}
+th, td{
+	border-bottom: 1px solid;
+	padding: 10px;
+	text-align: center;
+}
+.th-seq{
+	width: 50;
+}
+.th-title{
+	width: 400;
+}
+.th-member{
+	width: 100;
+}
+.th-createdate{
+	width: 100;
+}
+.th-cnt{
+	width: 50;
+}
+.insert{
+	width: 60;
+	text-align: center;
+	text-decoration: none;
+    border: 1px solid #ff8765;
+    color: #ff8765;
+    letter-spacing: 1px;
+    padding: 18px 34px;
+    border-radius: 30px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.insert:hover{
+    background: #ff8765;
+    border-color: #ff8765;
+    color: #000;
+    transition: 0.5s;
 }

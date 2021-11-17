@@ -1,0 +1,64 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"> -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>LETTER2U</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<section>
+		<img src="../../images/header.jpg" class="header">
+		<img src="../../images/logo.png" class="logo">
+		<nav class="nav">
+			<a th:href="@{/system/logout}">Logout</a>&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/admin/adminPage}">My Page</a>
+		</nav>
+		<img src="../../images/menu.png" class="menu">
+	</section>
+	<!-- <span sec:authorize="isAuthenticated()">
+		<b><font color="red">
+		<span sec:authentication="principal.member.name"></span>
+		</font></b> 님 환영합니다!! -->
+	<!-- </span> -->
+	
+	<!-- 검색 시작 -->
+	<!-- <form th:action="@{/board/getBoardList}" method="post">
+	<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0" th:width="700">
+	<tr>
+		<td align="right">
+			<select name="searchCondition">
+			<option value="TITLE">제목</option>
+			<option value="CONTENT">내용</option>
+			</select>
+			<input name="searchKeyword" type="text" />
+			<input type="submit" value="검색" />
+		</td>
+	</tr>
+	</table>
+	</form> -->
+	<!-- 검색 종료 -->
+	
+	<table>
+		<tr>
+			<th class=th-seq>번호</th>
+			<th class=th-title>제목</th>
+			<th class=th-member>작성자</th>
+			<th class=th-createdate>등록일</th>
+			<th class=th-cnt>조회수</th>
+		</tr>
+
+		<tr th:each="board, state : ${boardList}">
+			<td th:text="${state.count}">
+			<td><a th:href="@{/board/getBoard(seq=${board.seq})}"
+				th:text="${board.title}"></a></td>
+			<td th:text="${board.member.name}">
+			<td th:text="${#dates.format(board.createDate, 'yyyy-MM-dd')}">
+			<td th:text="${board.cnt}">
+		</tr>
+	</table>
+	<br>
+	<div class="insert"><a th:href="@{/board/insertBoard}">글쓰기</a></div>
+</body>
+</html>
