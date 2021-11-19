@@ -51,7 +51,7 @@
 
 		<tr th:each="board, state : ${boardList}">
 			<td th:text="${state.count}">
-			<td><a th:href="@{/board/getBoard(seq=${board.seq})}"
+			<td class="td-title"><a th:href="@{/board/getBoard(seq=${board.seq})}"
 				th:text="${board.title}"></a></td>
 			<td th:text="${board.member.name}">
 			<td th:text="${#dates.format(board.createDate, 'yyyy-MM-dd')}">
@@ -59,6 +59,6 @@
 		</tr>
 	</table>
 	<br>
-	<a th:href="@{/board/insertBoard}" class="insert">글쓰기</a>
+	<a th:href="@{/board/insertBoard}" class="btn-insert">글쓰기</a>
 </body>
 </html>

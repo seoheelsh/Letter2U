@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"> -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>LETTER2U</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<section>
+		<img src="../../images/header.jpg" class="board-header">
+		<img src="../../images/logo.png" class="board-logo">
+		<nav class="nav">
+			<a th:href="@{/system/logout}">Logout</a>&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/admin/adminPage}">My Page</a>
+		</nav>
+		<img src="../../images/menu.png" class="menu">
+	</section>
+	
+	<form th:action="@{/board/updateBoard}" method="post">
+		<table>
+			<tr>
+				<td th:text="제목"></td>
+				<td><input name="seq" type="hidden" th:value="${board.seq}">
+					<input name="title" type="text" th:value="${board.title}"></td>
+			</tr>
+			<tr>
+				<td th:text="작성자"></td>
+				<td th:text="${board.member.name}"></td>
+			</tr>
+			<tr>
+				<td th:text="내용"></td>
+				<td><textarea name="content" th:text="${board.content}"
+						cols="40" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td th:text="등록일"></td>
+				<td th:text="${#dates.format(board.createDate, 'yyyy-MM-dd')}">
+			</tr>
+			<tr>
+				<td th:text="조회수"></td>
+				<td th:text="${board.cnt}"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+				<input type="submit" value="게시글 수정"></td>
+			</tr>
+		</table>
+	</form>
+	<br>
+	<div align="center">
+		<a th:href="@{/board/deleteBoard(seq=${board.seq})}" class="btn-board">글삭제</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a th:href="@{/board/getBoardList}" class="btn-board">목록보기</a>
+	</div>
+</body>
+</html>

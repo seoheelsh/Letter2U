@@ -26,6 +26,12 @@ public class BoardController {
 		model.addAttribute("boardList", boardList);
 		return "board/getBoardList";
 	}
+
+	@GetMapping("/getBoard")
+	public String getBoard(Board board, Model model) {
+		model.addAttribute("board", boardService.getBoard(board));
+		return "board/getBoard";
+	}
 	/*
 	@RequestMapping("/getBoardList")
 	public String getBoardList(Model model, Search search) {
@@ -37,13 +43,7 @@ public class BoardController {
 		model.addAttribute("boardList", boardList);
 		return "board/getBoardList";
 	}
-	
-	@GetMapping("/getBoard")
-	public String getBoard(Board board, Model model) {
-		model.addAttribute("board", boardService.getBoard(board));
-		return "board/getBoard";
-	}
-	
+		
 	@GetMapping("/insertBoard")
 	public String insertBoardView() {
 		return "board/insertBoard";

@@ -26,8 +26,14 @@ a{
     color: #000;
     transition: 0.5s;
 }
-table a:link, a:visited{
+table a:link{
 	color: #000;
+}
+table a:visited{
+	color: #000;
+}
+table a:hover{
+	text-decoration: underline;
 }
 .container{
     height: auto;
@@ -125,11 +131,13 @@ table{
 	min-width: 500px;
 	border-top: 1px solid;
 	border-collapse: collapse;
+	border-color: #919191;
 	margin: auto;
 	margin-top: 40;
 }
 th, td{
 	border-bottom: 1px solid;
+	border-color: #919191;
 	padding: 10px;
 	text-align: center;
 }
@@ -148,7 +156,10 @@ th, td{
 .th-cnt{
 	width: 50;
 }
-.insert{
+.td-title{
+	text-align: left;
+}
+.btn-insert{
 	width: 60;
 	text-align: center;
     border: 1px solid #ff8765;
@@ -158,10 +169,24 @@ th, td{
     border-radius: 30px;
     display: block;
     margin: auto;
-    margin-top: 20px;
     margin-bottom: 20px;
 }
-.insert:hover{
+.btn-insert:hover{
+    background: #ff8765;
+    border-color: #ff8765;
+    color: #000;
+    transition: 0.5s;
+}
+.btn-board{
+    border: 1px solid #ff8765;
+    color: #ff8765;
+    letter-spacing: 1px;
+    padding: 5px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.btn-board:hover{
     background: #ff8765;
     border-color: #ff8765;
     color: #000;
