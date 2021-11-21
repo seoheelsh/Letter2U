@@ -23,24 +23,24 @@
 			<tr>
 				<td th:text="제목"></td>
 				<td><input name="seq" type="hidden" th:value="${board.seq}">
-					<input name="title" type="text" th:value="${board.title}"></td>
+					<input name="title" type="text" th:value="${board.title}" class="board-content"></td>
 			</tr>
 			<tr>
 				<td th:text="작성자"></td>
-				<td th:text="${board.member.name}"></td>
+				<td th:text="${board.member.name}" class="align"></td>
 			</tr>
 			<tr>
 				<td th:text="내용"></td>
 				<td><textarea name="content" th:text="${board.content}"
-						cols="40" rows="10"></textarea></td>
+						rows="10" class="board-content"></textarea></td>
 			</tr>
 			<tr>
 				<td th:text="등록일"></td>
-				<td th:text="${#dates.format(board.createDate, 'yyyy-MM-dd')}">
+				<td th:text="${#dates.format(board.createDate, 'yyyy-MM-dd')}" class="align">
 			</tr>
 			<tr>
 				<td th:text="조회수"></td>
-				<td th:text="${board.cnt}"></td>
+				<td th:text="${board.cnt}" class="align"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
