@@ -7,29 +7,40 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body th:align="center">
-	<h1>글쓰기</h1>
+<body>
+	<section>
+		<img src="../../images/header.jpg" class="board-header">
+		<img src="../../images/logo.png" class="board-logo">
+		<nav class="nav">
+			<a th:href="@{/system/logout}">Logout</a>&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/admin/adminPage}">My Page</a>
+		</nav>
+		<img src="../../images/menu.png" class="menu">
+	</section>
+	
 	<form th:action="@{/board/insertBoard}" method="post">
-		<table th:align="center" border="1" th:cellpadding="0"
-			th:cellspacing="0">
+		<table>
 			<tr>
-				<td bgcolor="green" th:text="제목" width="80"></td>
-				<td><input name="title" type="text" size="50"></td>
+				<td th:text="제목"></td>
+				<td><input name="title" type="text" class="board-content"></td>
 			</tr>
 			<tr>
-				<td bgcolor="green" th:text="작성자"></td>
-				<td><span sec:authentication="principal.member.name"></span></td>
+				<td th:text="작성자"></td>
+				<td><input name="writer" type="text" class="board-content"></td>
 			</tr>
 			<tr>
-				<td bgcolor="green" th:text="내용">
-				<td><textarea name="content" cols="50" rows="10"></textarea></td>
+				<td th:text="내용">
+				<td><textarea name="content" rows="10" class="board-content"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit"
-					value="게시글 등록"></td>
+				<td colspan="2" align="center">
+				<input type="submit" value="게시글 등록"></td>
 			</tr>
 		</table>
 	</form>
-	<a th:href="@{/board/getBoardList}">글목록</a>
+	<br>
+	<div align="center">
+		<a th:href="@{/board/getBoardList}" class="btn-board">목록보기</a>
+	</div>
 </body>
 </html>
