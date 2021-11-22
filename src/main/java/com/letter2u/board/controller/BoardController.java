@@ -32,6 +32,17 @@ public class BoardController {
 		model.addAttribute("board", boardService.getBoard(board));
 		return "board/getBoard";
 	}
+	
+	@GetMapping("/insertBoard")
+	public String insertBoardView() {
+		return "board/insertBoard";
+	}
+	
+	@PostMapping("/insertBoard")
+	public String insertBoard(Board board) {
+		boardService.insertBoard(board);
+		return "redirect:getBoardList";
+	}
 	/*
 	@RequestMapping("/getBoardList")
 	public String getBoardList(Model model, Search search) {
@@ -44,18 +55,6 @@ public class BoardController {
 		return "board/getBoardList";
 	}
 		
-	@GetMapping("/insertBoard")
-	public String insertBoardView() {
-		return "board/insertBoard";
-	}
-	
-	@PostMapping("/insertBoard")
-	public String insertBoard(Board board, @AuthenticationPrincipal SecurityUser principal) {
-		board.setMember(principal.getMember());
-		boardService.insertBoard(board);
-		return "redirect:getBoardList";
-	}
-	
 	@PostMapping("/updateBoard")
 	public String updateBoard(Board board) {
 		boardService.updateBoard(board);
