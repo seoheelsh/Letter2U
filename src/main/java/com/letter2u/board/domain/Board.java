@@ -31,12 +31,9 @@ public class Board {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(updatable = false)
 	private Date createDate = new Date();
-	
-	@Column(updatable = false)
-	private Long cnt = 0L;
 
 	@ManyToOne
-	@JoinColumn(name = "MEMEBER_ID", nullable = false, updatable = false)
+	@JoinColumn(name = "MEMBER_EMAIL", nullable = false, updatable = false)
 	private Member member;
 	
 	public void setMember(Member member) {

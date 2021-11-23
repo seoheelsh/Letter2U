@@ -44,18 +44,14 @@
 		<tr>
 			<th class=th-seq>번호</th>
 			<th class=th-title>제목</th>
-			<th class=th-member>작성자</th>
 			<th class=th-createdate>등록일</th>
-			<th class=th-cnt>조회수</th>
 		</tr>
 
 		<tr th:each="board, state : ${boardList}">
 			<td th:text="${state.count}">
 			<td class="td-title"><a th:href="@{/board/getBoard(seq=${board.seq})}"
 				th:text="${board.title}"></a></td>
-			<td th:text="${board.member.name}">
 			<td th:text="${#dates.format(board.createDate, 'yyyy-MM-dd')}">
-			<td th:text="${board.cnt}">
 		</tr>
 	</table>
 	<br>

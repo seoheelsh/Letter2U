@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -21,15 +19,12 @@ import lombok.ToString;
 @Entity
 public class Member {
 	@Id
-	@Column(name = "MEMBER_ID")
-	private String id;
+	@Column(name = "MEMBER_EMAIL")
+	private String email;
 	
 	private String password;
 	
-	private String name;
-	
-	@Enumerated(EnumType.STRING)
-	private Role role;
+	private String nickname;
 	
 	private boolean enabled;
 	
