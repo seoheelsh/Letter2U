@@ -86,8 +86,8 @@ table a:hover{
     font-weight: 100;
     color: #cfcfcf;
     margin-top: 60px;
-    margin-bottom: 30px;
-    line-height: 150px;
+    margin-bottom: 20px;
+    line-height: 140px;
     letter-spacing: -10px;
 }
 .content p{
@@ -104,7 +104,7 @@ table a:hover{
     padding: 18px 34px;
     border-radius: 30px;
     display: inline-block;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-bottom: 20px;
 }
 .content .btn:hover{
