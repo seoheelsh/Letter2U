@@ -43,6 +43,18 @@ public class BoardController {
 		boardService.insertBoard(board);
 		return "redirect:getBoardList";
 	}
+	
+	@PostMapping("/updateBoard")
+	public String updateBoard(Board board) {
+		boardService.updateBoard(board);
+		return "forward:getBoardList";
+	}
+	
+	@GetMapping("/deleteBoard")
+	public String deleteBoard(Board board) {
+		boardService.deleteBoard(board);
+		return "forward:getBoardList";
+	}
 	/*
 	@RequestMapping("/getBoardList")
 	public String getBoardList(Model model, Search search) {
@@ -54,16 +66,5 @@ public class BoardController {
 		model.addAttribute("boardList", boardList);
 		return "board/getBoardList";
 	}
-		
-	@PostMapping("/updateBoard")
-	public String updateBoard(Board board) {
-		boardService.updateBoard(board);
-		return "forward:getBoardList";
-	}
-	
-	@GetMapping("/deleteBoard")
-	public String deleteBoard(Board board) {
-		boardService.deleteBoard(board);
-		return "forward:getBoardList";
-	}*/
+	*/
 }

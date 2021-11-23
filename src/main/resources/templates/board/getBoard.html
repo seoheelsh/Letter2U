@@ -23,7 +23,7 @@
 			<tr>
 				<td th:text="제목"></td>
 				<td><input name="seq" type="hidden" th:value="${board.seq}">
-					<input name="title" type="text" th:value="${board.title}" class="board-content"></td>
+					<input name="title" type="text" th:value="${board.title}" class="width"></td>
 			</tr>
 			<tr>
 				<td th:text="작성자"></td>
@@ -31,8 +31,7 @@
 			</tr>
 			<tr>
 				<td th:text="내용">
-				<td><textarea name="content" th:text="${board.content}"
-						rows="10" class="board-content"></textarea></td>
+				<td><textarea name="content" th:text="${board.content}"></textarea></td>
 			</tr>
 			<tr>
 				<td th:text="등록일"></td>
